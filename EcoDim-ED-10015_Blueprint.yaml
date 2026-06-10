@@ -1,0 +1,636 @@
+blueprint:
+  name: Zigbee2MQTT - EcoDim 4 Channel remote (ED-10015)
+  description: Nieuwe controle voor de EcoDim 4 kanalen, omgebouwd voor Zigbee2MQTT.
+  domain: automation
+  input:
+    remote1:
+      name: Remote controler
+      description: >-
+        De EcoDim ED-10015 zoals die in Home Assistant verschijnt via de
+        Zigbee2MQTT (MQTT) integratie.
+      default:
+      selector:
+        device:
+          integration: mqtt
+          manufacturer: EcoDim
+          model: ED-10015
+          multiple: false
+    lights:
+      name: Lights
+      description: Lights to control when using default light actions
+      default:
+        entity_id: none
+      selector:
+        target:
+          entity:
+          - domain:
+            - light
+    on_short_custom_1:
+      name: Use custom action for short on-button press row 1
+      description: 'Specify custom actions to run using a short press of the on button
+        row 1.
+
+        If not specified, the controlled light will be turned on.'
+      default: false
+      selector:
+        boolean: {}
+    button_on_short_1:
+      name: On button press for row 1
+      description: Action to run on press of On button row 1
+      default: []
+      selector:
+        action: {}
+    off_short_custom_1:
+      name: Use custom action for short off-button press row 1
+      description: 'Specify custom actions to run using a short press of the off button.
+
+        If not specified, the controlled light will be turned off.'
+      default: false
+      selector:
+        boolean: {}
+    button_off_short_1:
+      name: Off button press for row 1
+      description: Action to run on press of Off button
+      default: []
+      selector:
+        action: {}
+    on_long_custom_1:
+      name: Use custom action for long on-button hold row 1
+      description: 'Specify custom actions to run using a long press of the on button.
+
+        If not specified, the controlled light will be increased in brightness.'
+      default: false
+      selector:
+        boolean: {}
+    button_on_long_1:
+      name: On button hold for row 1
+      description: Action to run on long press of On button
+      default: []
+      selector:
+        action: {}
+    off_long_custom_1:
+      name: Use custom action for long off-button hold row 1
+      description: 'Specify custom actions to run using a long press of the off button.
+
+        If not specified, the controlled light will be decreased in brightness.'
+      default: false
+      selector:
+        boolean: {}
+    button_off_long_1:
+      name: Off button hold for row 1
+      description: Action to run on long press of Off button
+      default: []
+      selector:
+        action: {}
+    on_short_custom_2:
+      name: Use custom action for short on-button press row 2
+      description: 'Specify custom actions to run using a short press of the on button.
+
+        If not specified, the controlled light will be turned on.'
+      default: false
+      selector:
+        boolean: {}
+    button_on_short_2:
+      name: On button press for row 2
+      description: Action to run on press of On button
+      default: []
+      selector:
+        action: {}
+    off_short_custom_2:
+      name: Use custom action for short off-button press row 2
+      description: 'Specify custom actions to run using a short press of the off button.
+
+        If not specified, the controlled light will be turned off.'
+      default: false
+      selector:
+        boolean: {}
+    button_off_short_2:
+      name: Off button press for row 2
+      description: Action to run on press of Off button
+      default: []
+      selector:
+        action: {}
+    on_long_custom_2:
+      name: Use custom action for long on-button hold row 2
+      description: 'Specify custom actions to run using a long press of the on button.
+
+        If not specified, the controlled light will be increased in brightness.'
+      default: false
+      selector:
+        boolean: {}
+    button_on_long_2:
+      name: On button hold for row 2
+      description: Action to run on long press of On button
+      default: []
+      selector:
+        action: {}
+    off_long_custom_2:
+      name: Use custom action for long off-button hold row 2
+      description: 'Specify custom actions to run using a long press of the off button.
+
+        If not specified, the controlled light will be decreased in brightness.'
+      default: false
+      selector:
+        boolean: {}
+    button_off_long_2:
+      name: Off button hold for row 2
+      description: Action to run on long press of Off button
+      default: []
+      selector:
+        action: {}
+    on_short_custom_3:
+      name: Use custom action for short on-button press row 3
+      description: 'Specify custom actions to run using a short press of the on button.
+
+        If not specified, the controlled light will be turned on.'
+      default: false
+      selector:
+        boolean: {}
+    button_on_short_3:
+      name: On button press for row 3
+      description: Action to run on press of On button
+      default: []
+      selector:
+        action: {}
+    off_short_custom_3:
+      name: Use custom action for short off-button press row 3
+      description: 'Specify custom actions to run using a short press of the off button.
+
+        If not specified, the controlled light will be turned off.'
+      default: false
+      selector:
+        boolean: {}
+    button_off_short_3:
+      name: Off button press for row 3
+      description: Action to run on press of Off button
+      default: []
+      selector:
+        action: {}
+    on_long_custom_3:
+      name: Use custom action for long on-button hold row 3
+      description: 'Specify custom actions to run using a long press of the on button.
+
+        If not specified, the controlled light will be increased in brightness.'
+      default: false
+      selector:
+        boolean: {}
+    button_on_long_3:
+      name: On button hold for row 3
+      description: Action to run on long press of On button
+      default: []
+      selector:
+        action: {}
+    off_long_custom_3:
+      name: Use custom action for long off-button hold row 3
+      description: 'Specify custom actions to run using a long press of the off button.
+
+        If not specified, the controlled light will be decreased in brightness.'
+      default: false
+      selector:
+        boolean: {}
+    button_off_long_3:
+      name: Off button hold for row 3
+      description: Action to run on long press of Off button
+      default: []
+      selector:
+        action: {}
+    on_short_custom_4:
+      name: Use custom action for short on-button press row 4
+      description: 'Specify custom actions to run using a short press of the on button.
+
+        If not specified, the controlled light will be turned on.'
+      default: false
+      selector:
+        boolean: {}
+    button_on_short_4:
+      name: On button press for row 4
+      description: Action to run on press of On button
+      default: []
+      selector:
+        action: {}
+    off_short_custom_4:
+      name: Use custom action for short off-button press row 4
+      description: 'Specify custom actions to run using a short press of the off button.
+
+        If not specified, the controlled light will be turned off.'
+      default: false
+      selector:
+        boolean: {}
+    button_off_short_4:
+      name: Off button press for row 4
+      description: Action to run on press of Off button
+      default: []
+      selector:
+        action: {}
+    on_long_custom_4:
+      name: Use custom action for long on-button hold row 4
+      description: 'Specify custom actions to run using a long press of the on button.
+
+        If not specified, the controlled light will be increased in brightness.'
+      default: false
+      selector:
+        boolean: {}
+    button_on_long_4:
+      name: On button hold for row 4
+      description: Action to run on long press of On button
+      default: []
+      selector:
+        action: {}
+    off_long_custom_4:
+      name: Use custom action for long off-button hold row 4
+      description: 'Specify custom actions to run using a long press of the off button.
+
+        If not specified, the controlled light will be decreased in brightness.'
+      default: false
+      selector:
+        boolean: {}
+    button_off_long_4:
+      name: Off button hold for row 4
+      description: Action to run on long press of Off button
+      default: []
+      selector:
+        action: {}
+  source_url: https://gist.github.com/ronaldbarendse/c404fa9f505726f0cf05f859d05d3fdf
+# Zigbee2MQTT publiceert per kanaal de volgende acties:
+#   on_N, off_N, brightness_move_up_N, brightness_move_down_N, brightness_stop_N (N = 1..4)
+# We luisteren via MQTT device triggers (domain: mqtt, type: action).
+# De brightness_stop_* triggers hebben geen eigen actie: dankzij "mode: restart"
+# onderbreken ze de lopende dim-lus (loslaten van de knop stopt het dimmen).
+trigger:
+- platform: device
+  domain: mqtt
+  device_id: !input remote1
+  type: action
+  subtype: 'on_1'
+  id: 'on_1'
+- platform: device
+  domain: mqtt
+  device_id: !input remote1
+  type: action
+  subtype: 'off_1'
+  id: 'off_1'
+- platform: device
+  domain: mqtt
+  device_id: !input remote1
+  type: action
+  subtype: 'brightness_move_up_1'
+  id: 'up_1'
+- platform: device
+  domain: mqtt
+  device_id: !input remote1
+  type: action
+  subtype: 'brightness_move_down_1'
+  id: 'down_1'
+- platform: device
+  domain: mqtt
+  device_id: !input remote1
+  type: action
+  subtype: 'brightness_stop_1'
+  id: 'stop_1'
+- platform: device
+  domain: mqtt
+  device_id: !input remote1
+  type: action
+  subtype: 'on_2'
+  id: 'on_2'
+- platform: device
+  domain: mqtt
+  device_id: !input remote1
+  type: action
+  subtype: 'off_2'
+  id: 'off_2'
+- platform: device
+  domain: mqtt
+  device_id: !input remote1
+  type: action
+  subtype: 'brightness_move_up_2'
+  id: 'up_2'
+- platform: device
+  domain: mqtt
+  device_id: !input remote1
+  type: action
+  subtype: 'brightness_move_down_2'
+  id: 'down_2'
+- platform: device
+  domain: mqtt
+  device_id: !input remote1
+  type: action
+  subtype: 'brightness_stop_2'
+  id: 'stop_2'
+- platform: device
+  domain: mqtt
+  device_id: !input remote1
+  type: action
+  subtype: 'on_3'
+  id: 'on_3'
+- platform: device
+  domain: mqtt
+  device_id: !input remote1
+  type: action
+  subtype: 'off_3'
+  id: 'off_3'
+- platform: device
+  domain: mqtt
+  device_id: !input remote1
+  type: action
+  subtype: 'brightness_move_up_3'
+  id: 'up_3'
+- platform: device
+  domain: mqtt
+  device_id: !input remote1
+  type: action
+  subtype: 'brightness_move_down_3'
+  id: 'down_3'
+- platform: device
+  domain: mqtt
+  device_id: !input remote1
+  type: action
+  subtype: 'brightness_stop_3'
+  id: 'stop_3'
+- platform: device
+  domain: mqtt
+  device_id: !input remote1
+  type: action
+  subtype: 'on_4'
+  id: 'on_4'
+- platform: device
+  domain: mqtt
+  device_id: !input remote1
+  type: action
+  subtype: 'off_4'
+  id: 'off_4'
+- platform: device
+  domain: mqtt
+  device_id: !input remote1
+  type: action
+  subtype: 'brightness_move_up_4'
+  id: 'up_4'
+- platform: device
+  domain: mqtt
+  device_id: !input remote1
+  type: action
+  subtype: 'brightness_move_down_4'
+  id: 'down_4'
+- platform: device
+  domain: mqtt
+  device_id: !input remote1
+  type: action
+  subtype: 'brightness_stop_4'
+  id: 'stop_4'
+mode: restart
+action:
+- variables:
+    action: '{{ trigger.id }}'
+    on_short_custom_1: !input on_short_custom_1
+    off_short_custom_1: !input off_short_custom_1
+    on_long_custom_1: !input on_long_custom_1
+    off_long_custom_1: !input off_long_custom_1
+    on_short_custom_2: !input on_short_custom_2
+    off_short_custom_2: !input off_short_custom_2
+    on_long_custom_2: !input on_long_custom_2
+    off_long_custom_2: !input off_long_custom_2
+    on_short_custom_3: !input on_short_custom_3
+    off_short_custom_3: !input off_short_custom_3
+    on_long_custom_3: !input on_long_custom_3
+    off_long_custom_3: !input off_long_custom_3
+    on_short_custom_4: !input on_short_custom_4
+    off_short_custom_4: !input off_short_custom_4
+    on_long_custom_4: !input on_long_custom_4
+    off_long_custom_4: !input off_long_custom_4
+- choose:
+  # ---------------- Row 1 ----------------
+  - conditions: '{{ action == ''on_1'' }}'
+    sequence:
+    - choose:
+      - conditions: '{{ on_short_custom_1 }}'
+        sequence: !input button_on_short_1
+      - conditions: '{{ not on_short_custom_1 }}'
+        sequence:
+        - service: light.turn_on
+          target: !input lights
+          data:
+            transition: 1
+  - conditions: '{{ action == ''off_1'' }}'
+    sequence:
+    - choose:
+      - conditions: '{{ off_short_custom_1 }}'
+        sequence: !input button_off_short_1
+      - conditions: '{{ not off_short_custom_1 }}'
+        sequence:
+        - service: light.turn_off
+          target: !input lights
+          data:
+            transition: 1
+  - conditions: '{{ action == ''up_1'' }}'
+    sequence:
+    - choose:
+      - conditions: '{{ on_long_custom_1 }}'
+        sequence: !input button_on_long_1
+      - conditions: '{{ not on_long_custom_1 }}'
+        sequence:
+        - repeat:
+            while:
+            - condition: template
+              value_template: '{{ repeat.index < 10 }}'
+            sequence:
+            - service: light.turn_on
+              target: !input lights
+              data:
+                transition: 1
+                brightness_step_pct: 10
+            - delay: 1
+  - conditions: '{{ action == ''down_1'' }}'
+    sequence:
+    - choose:
+      - conditions: '{{ off_long_custom_1 }}'
+        sequence: !input button_off_long_1
+      - conditions: '{{ not off_long_custom_1 }}'
+        sequence:
+        - repeat:
+            while:
+            - condition: template
+              value_template: '{{ repeat.index < 10 }}'
+            sequence:
+            - service: light.turn_on
+              target: !input lights
+              data:
+                transition: 1
+                brightness_step_pct: -10
+            - delay: 1
+  # ---------------- Row 2 ----------------
+  - conditions: '{{ action == ''on_2'' }}'
+    sequence:
+    - choose:
+      - conditions: '{{ on_short_custom_2 }}'
+        sequence: !input button_on_short_2
+      - conditions: '{{ not on_short_custom_2 }}'
+        sequence:
+        - service: light.turn_on
+          target: !input lights
+          data:
+            transition: 1
+  - conditions: '{{ action == ''off_2'' }}'
+    sequence:
+    - choose:
+      - conditions: '{{ off_short_custom_2 }}'
+        sequence: !input button_off_short_2
+      - conditions: '{{ not off_short_custom_2 }}'
+        sequence:
+        - service: light.turn_off
+          target: !input lights
+          data:
+            transition: 1
+  - conditions: '{{ action == ''up_2'' }}'
+    sequence:
+    - choose:
+      - conditions: '{{ on_long_custom_2 }}'
+        sequence: !input button_on_long_2
+      - conditions: '{{ not on_long_custom_2 }}'
+        sequence:
+        - repeat:
+            while:
+            - condition: template
+              value_template: '{{ repeat.index < 10 }}'
+            sequence:
+            - service: light.turn_on
+              target: !input lights
+              data:
+                transition: 1
+                brightness_step_pct: 10
+            - delay: 1
+  - conditions: '{{ action == ''down_2'' }}'
+    sequence:
+    - choose:
+      - conditions: '{{ off_long_custom_2 }}'
+        sequence: !input button_off_long_2
+      - conditions: '{{ not off_long_custom_2 }}'
+        sequence:
+        - repeat:
+            while:
+            - condition: template
+              value_template: '{{ repeat.index < 10 }}'
+            sequence:
+            - service: light.turn_on
+              target: !input lights
+              data:
+                transition: 1
+                brightness_step_pct: -10
+            - delay: 1
+  # ---------------- Row 3 ----------------
+  - conditions: '{{ action == ''on_3'' }}'
+    sequence:
+    - choose:
+      - conditions: '{{ on_short_custom_3 }}'
+        sequence: !input button_on_short_3
+      - conditions: '{{ not on_short_custom_3 }}'
+        sequence:
+        - service: light.turn_on
+          target: !input lights
+          data:
+            transition: 1
+  - conditions: '{{ action == ''off_3'' }}'
+    sequence:
+    - choose:
+      - conditions: '{{ off_short_custom_3 }}'
+        sequence: !input button_off_short_3
+      - conditions: '{{ not off_short_custom_3 }}'
+        sequence:
+        - service: light.turn_off
+          target: !input lights
+          data:
+            transition: 1
+  - conditions: '{{ action == ''up_3'' }}'
+    sequence:
+    - choose:
+      - conditions: '{{ on_long_custom_3 }}'
+        sequence: !input button_on_long_3
+      - conditions: '{{ not on_long_custom_3 }}'
+        sequence:
+        - repeat:
+            while:
+            - condition: template
+              value_template: '{{ repeat.index < 10 }}'
+            sequence:
+            - service: light.turn_on
+              target: !input lights
+              data:
+                transition: 1
+                brightness_step_pct: 10
+            - delay: 1
+  - conditions: '{{ action == ''down_3'' }}'
+    sequence:
+    - choose:
+      - conditions: '{{ off_long_custom_3 }}'
+        sequence: !input button_off_long_3
+      - conditions: '{{ not off_long_custom_3 }}'
+        sequence:
+        - repeat:
+            while:
+            - condition: template
+              value_template: '{{ repeat.index < 10 }}'
+            sequence:
+            - service: light.turn_on
+              target: !input lights
+              data:
+                transition: 1
+                brightness_step_pct: -10
+            - delay: 1
+  # ---------------- Row 4 ----------------
+  - conditions: '{{ action == ''on_4'' }}'
+    sequence:
+    - choose:
+      - conditions: '{{ on_short_custom_4 }}'
+        sequence: !input button_on_short_4
+      - conditions: '{{ not on_short_custom_4 }}'
+        sequence:
+        - service: light.turn_on
+          target: !input lights
+          data:
+            transition: 1
+  - conditions: '{{ action == ''off_4'' }}'
+    sequence:
+    - choose:
+      - conditions: '{{ off_short_custom_4 }}'
+        sequence: !input button_off_short_4
+      - conditions: '{{ not off_short_custom_4 }}'
+        sequence:
+        - service: light.turn_off
+          target: !input lights
+          data:
+            transition: 1
+  - conditions: '{{ action == ''up_4'' }}'
+    sequence:
+    - choose:
+      - conditions: '{{ on_long_custom_4 }}'
+        sequence: !input button_on_long_4
+      - conditions: '{{ not on_long_custom_4 }}'
+        sequence:
+        - repeat:
+            while:
+            - condition: template
+              value_template: '{{ repeat.index < 10 }}'
+            sequence:
+            - service: light.turn_on
+              target: !input lights
+              data:
+                transition: 1
+                brightness_step_pct: 10
+            - delay: 1
+  - conditions: '{{ action == ''down_4'' }}'
+    sequence:
+    - choose:
+      - conditions: '{{ off_long_custom_4 }}'
+        sequence: !input button_off_long_4
+      - conditions: '{{ not off_long_custom_4 }}'
+        sequence:
+        - repeat:
+            while:
+            - condition: template
+              value_template: '{{ repeat.index < 10 }}'
+            sequence:
+            - service: light.turn_on
+              target: !input lights
+              data:
+                transition: 1
+                brightness_step_pct: -10
+            - delay: 1
