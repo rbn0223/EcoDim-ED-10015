@@ -2,12 +2,17 @@ blueprint:
   name: Zigbee2MQTT - EcoDim 4 Channel remote (ED-10015)
   description: Nieuwe controle voor de EcoDim 4 kanalen, omgebouwd voor Zigbee2MQTT.
   domain: automation
-    input:
-    controller:
-      name: (Zigbee2MQTT) Controller Name
-      description: The name of the controller as defined in z2m (e.g. Livingroom Switch)
-      default: ""
-      
+  input:
+    remote1:
+      name: Remote controler
+      description: >-
+        De EcoDim ED-10015 zoals die in Home Assistant verschijnt via de
+        Zigbee2MQTT (MQTT) integratie.
+      default:
+      selector:
+        device:
+          integration: mqtt
+          multiple: false
     lights:
       name: Lights
       description: Lights to control when using default light actions
