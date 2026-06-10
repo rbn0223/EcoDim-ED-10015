@@ -12,8 +12,6 @@ blueprint:
       selector:
         device:
           integration: mqtt
-          manufacturer: EcoDim
-          model: ED-10015
           multiple: false
     lights:
       name: Lights
